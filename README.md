@@ -111,6 +111,5 @@ ORDER BY f.tempo_assistido_min DESC;
 
 ---
 
-## 👨‍💻 Autor
-
-Projeto desenvolvido para fins de estudo e portfólio.
+📬 Autor: Gustavo Silva Reis
+🔗 LinkedIn: https://www.linkedin.com/in/gsreisit
