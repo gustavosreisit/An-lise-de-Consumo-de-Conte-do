@@ -23,6 +23,7 @@ Padronização do nome dos planos (primeira letra maiúscula)
 --
 💻 Query SQL
 
+```
 SELECT 
     d.id_usuario,
     COALESCE(d.nome, 'Sem Nome') AS nome,
@@ -59,6 +60,7 @@ LEFT JOIN dim_conteudo c
     ON c.id_conteudo = f.id_conteudo
 
 ORDER BY f.tempo_assistido_min DESC;
+```
 --
 📊 Dashboard
 
