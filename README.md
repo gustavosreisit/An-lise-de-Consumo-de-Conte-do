@@ -1,41 +1,26 @@
-# An-lise-de-Consumo-de-Conte-do
-Análise baseada em tendências por idade e utilizando ferramentas para limpeza de dados.
-# 📊 Análise de Consumo de Conteúdo
-
-## 📌 Sobre o Projeto
+📊 Análise de Consumo de Conteúdo
+📌 Sobre o Projeto
 
 Este projeto tem como objetivo analisar o comportamento de usuários em uma plataforma de streaming, explorando o consumo de conteúdo com base em:
 
-* Faixa etária
-* Tipo de conteúdo
-* Tempo assistido
-* Plano do usuário
+Faixa etária
+Tipo de conteúdo
+Tempo assistido
+Plano do usuário
 
-A análise foi realizada utilizando **SQL** para tratamento e transformação dos dados, com possibilidade de integração com ferramentas de visualização como Power BI.
+A análise foi realizada utilizando SQL para tratamento e transformação dos dados, com integração em Power BI para visualização.
 
----
-
-## 🧠 Regras de Negócio Aplicadas
-
-* Classificação de usuários por faixa etária:
-
-  * Menor de idade (< 18)
-  * Jovem (18–29)
-  * Adulto (30–59)
-  * Idoso (60+)
-
-* Formatação do tempo de duração dos conteúdos:
-
-  * Conteúdos com menos de 60 minutos → exibidos em minutos
-  * Conteúdos com mais de 60 minutos → exibidos em horas e minutos
-
-* Padronização do nome dos planos (primeira letra maiúscula)
-
----
-
-## 💻 Query SQL
-
-```sql
+🧠 Regras de Negócio Aplicadas
+Classificação de usuários por faixa etária:
+Menor de idade (< 18)
+Jovem (18–29)
+Adulto (30–59)
+Idoso (60+)
+Formatação do tempo de duração dos conteúdos:
+Conteúdos com menos de 60 minutos → exibidos em minutos
+Conteúdos com mais de 60 minutos → exibidos em horas e minutos
+Padronização do nome dos planos (primeira letra maiúscula)
+💻 Query SQL
 SELECT 
     d.id_usuario,
     COALESCE(d.nome, 'Sem Nome') AS nome,
@@ -72,44 +57,23 @@ LEFT JOIN dim_conteudo c
     ON c.id_conteudo = f.id_conteudo
 
 ORDER BY f.tempo_assistido_min DESC;
-```
+--
+📊 Dashboard
 
----
+Abaixo está o relatório desenvolvido no Power BI com os principais insights da análise:
 
-## 📷 Exemplo do Resultado
+<img width="1248" height="717" alt="image" src="https://github.com/user-attachments/assets/128b68ff-315d-4818-a556-b32263962b54" />
 
-> *(Insira aqui a imagem do resultado da query)*
 
-![Resultado da Query](./images/resultado_query.png)
-
----
-
-## 📊 Possíveis Insights
-
-* Identificação de quais faixas etárias consomem mais conteúdo
-* Conteúdos mais assistidos por gênero
-* Relação entre plano e tempo de consumo
-* Padrões de comportamento dos usuários
-
----
-
-## 🚀 Próximos Passos
-
-* Construção de dashboard no Power BI
-* Criação de métricas como:
-
-  * Tempo médio por usuário
-  * Conteúdo mais assistido
-  * Percentual de consumo por conteúdo
-
----
-
-## 🛠️ Tecnologias Utilizadas
-
-* SQL
-* Power BI (em desenvolvimento)
-
----
+📊 Possíveis Insights
+Identificação de quais faixas etárias consomem mais conteúdo
+Conteúdos mais assistidos por gênero
+Relação entre plano e tempo de consumo
+Padrões de comportamento dos usuários
+--
+🛠️ Tecnologias Utilizadas
+SQL
+Power BI
 
 📬 Autor: Gustavo Silva Reis
 🔗 LinkedIn: https://www.linkedin.com/in/gsreisit
